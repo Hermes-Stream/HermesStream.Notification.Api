@@ -14,14 +14,6 @@ namespace HermesStream.Notification.Api.Controllers
         }
 
 
-        // GET: api/<ValuesController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<ValuesController>/5
         [HttpGet]
         [Route("get-notification-InformationType")]
         public ActionResult GetOneNotificationInformation()
@@ -54,23 +46,5 @@ namespace HermesStream.Notification.Api.Controllers
             }
         }
 
-
-        //// POST api/<ValuesController>
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
-
-        //// PUT api/<ValuesController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        //// DELETE api/<ValuesController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }
