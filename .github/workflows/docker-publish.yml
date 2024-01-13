@@ -33,5 +33,5 @@ jobs:
           docker buildx create --use
           docker buildx inspect --bootstrap
           docker buildx build --platform linux/amd64,linux/arm64 -t ${{ env.IMAGE_NAME }}:${{ env.TAG }} -t ${{ env.IMAGE_NAME }}:latest -f Dockerfile .
-          docker push ${{ juliaasoares/hermesstreamnotificationapi }}:${{ 1.0.0 }}
-          docker push ${{ juliaasoares/hermesstreamnotificationapi }}:latest
+          docker push ${{ hermesstreamnotificationapi }}:${{ 1.0.0 }}
+          docker push ${{ hermesstreamnotificationapi }}:latest
