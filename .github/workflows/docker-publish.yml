@@ -6,8 +6,8 @@ on:
       - master
 
 env:
-  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  DOCKER_USERNAME: ${secrets.DOCKER_USERNAME}
+  DOCKER_PASSWORD: ${secrets.DOCKER_PASSWORD}
   IMAGE_NAME: "seu-usuario/seu-repositorio"
   TAG: ${{ github.sha }}
 
