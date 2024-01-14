@@ -3,9 +3,9 @@ WORKDIR /src
 
 # Copie os arquivos do projeto
 COPY ["HermesStream.Notification.Api/HermesStream.Notification.Api.csproj", "HermesStream.Notification.Api/"]
-COPY ["HermesStream.Notification.Api/HermesStream.Notification.Infrastructure.csproj", "HermesStream.Notification.Infrastructure/"]
-COPY ["HermesStream.Notification.Api/HermesStream.Notification.Service.csproj", "HermesStream.Notification.Service/"]
-COPY ["HermesStream.Notification.Api/HermesStream.Notification.Repository.csproj", "HermesStream.Notification.Repository/"]
+COPY ["HermesStream.Notification.Infrastructure/HermesStream.Notification.Infrastructure.csproj", "HermesStream.Notification.Infrastructure/"]
+COPY ["HermesStream.Notification.Service/HermesStream.Notification.Service.csproj", "HermesStream.Notification.Service/"]
+COPY ["HermesStream.Notification.Repository/HermesStream.Notification.Repository.csproj", "HermesStream.Notification.Repository/"]
 
 # Restaurar as dependências
 RUN dotnet restore "HermesStream.Notification.Api/HermesStream.Notification.Api.csproj"
