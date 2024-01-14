@@ -25,3 +25,6 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "HermesStream.Notification.Api.dll"]
+
+
+C:\HermesStream\HermesStream.Notification.Api\HermesStream.Notification.Repository\HermesStream.Notification.Repository.csproj
