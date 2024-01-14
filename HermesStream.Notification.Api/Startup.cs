@@ -2,10 +2,7 @@
 using Microsoft.OpenApi.Models;
 using Autofac;
 using HermesStream.Notification.Infrastructure;
-using AutoMapper;
 using Autofac.Extensions.DependencyInjection;
-using Amazon.Auth.AccessControlPolicy;
-using System.Reflection;
 
 public class Startup
 {
