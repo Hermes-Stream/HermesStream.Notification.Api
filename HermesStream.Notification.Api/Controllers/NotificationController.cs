@@ -1,6 +1,7 @@
 ﻿using HermesStream.Notification.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace HermesStream.Notification.Api.Controllers
 {
     [Route("notification")]
