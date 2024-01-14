@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  hermesstream.notification.api:
+    image: ${DOCKER_REGISTRY-}hermesstreamnotificationapi
+    build:
+      context: .
+      dockerfile: HermesStream.Notification.Api/Dockerfile
