@@ -8,13 +8,11 @@ namespace HermesStream.Notification.Repository.Mongo
 
         public void Dispose() { }
 
-
         public MongoDbContext(string connectionString, string databaseName)
         {
             var client = new MongoClient(connectionString);
             _database = client.GetDatabase(databaseName);
         }
-
 
         public IMongoCollection<T> GetCollection<T>(string collectionName)
         {
