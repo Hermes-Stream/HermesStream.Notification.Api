@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HermesStream.Notification.Repository\HermesStream.Notification.Repo.csproj" />
+    <ProjectReference Include="..\HermesStream.Notification.Repository\HermesStream.Notification.Repository.csproj" />
   </ItemGroup>
 
 </Project>

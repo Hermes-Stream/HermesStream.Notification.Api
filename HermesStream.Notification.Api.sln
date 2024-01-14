@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HermesStream.Notification.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HermesStream.Notification.Service", "HermesStream.Notification.Service\HermesStream.Notification.Service.csproj", "{EED53AA7-D378-4419-9EFA-32DD9255BB0A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HermesStream.Notification.Repo", "HermesStream.Notification.Repository\HermesStream.Notification.Repo.csproj", "{4AE1D0C4-8954-4919-893B-986093734541}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HermesStream.Notification.Repository", "HermesStream.Notification.Repository\HermesStream.Notification.Repository.csproj", "{4AE1D0C4-8954-4919-893B-986093734541}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HermesStream.Notification.Infrastructure", "HermesStream.Notification.Infrastructure\HermesStream.Notification.Infrastructure.csproj", "{6E01A554-B2BF-4811-B035-9C55AB90682E}"
 EndProject
