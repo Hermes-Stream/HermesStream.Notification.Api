@@ -4,7 +4,6 @@ namespace HermesStream.Notification.Repository.Mongo
 {
     public class MongoDbNotificationRepository : INotificationRepository
     {
-        private readonly MongoDbContext? _context;
         private readonly IMongoCollection<Notification> _notificationCollection;
 
         public MongoDbNotificationRepository()
@@ -24,14 +23,14 @@ namespace HermesStream.Notification.Repository.Mongo
 
             var notifications = new List<Notification>
                 {
-                    new Notification()
+                    new()
                     {
                         NotificationId = Guid.NewGuid().ToString(),
                         ClientId = Guid.NewGuid().ToString(),
                         Message = "Atenção! Esse é um exemplo de notificação INFORMATION",
                         NotificationType = NotificationType.INFORMATION
                     },
-                    new Notification()
+                    new()
                     {
                         NotificationId = Guid.NewGuid().ToString(),
                         ClientId = Guid.NewGuid().ToString(),
