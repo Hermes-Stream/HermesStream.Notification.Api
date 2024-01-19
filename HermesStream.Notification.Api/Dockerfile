@@ -1,28 +1,27 @@
-#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
-
+# Estágio de construção
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-ARG BUILD_CONFIGURATION=Release
+
 WORKDIR /src
-COPY ["HermesStream.Notification.Api/HermesStream.Notification.Api/HermesStream.Notification.Api.csproj", "HermesStream.Notification.Api/"]
-COPY ["HermesStream.Notification.Api/HermesStream.Notification.Infrastructure/HermesStream.Notification.Infrastructure.csproj", "HermesStream.Notification.Infrastructure/"]
-COPY ["HermesStream.Notification.Api/HermesStream.Notification.Repository/HermesStream.Notification.Repository.csproj", "HermesStream.Notification.Repository/"]
-COPY ["HermesStream.Notification.Api/HermesStream.Notification.Service/HermesStream.Notification.Service.csproj", "HermesStream.Notification.Service/"]
-COPY ["HermesStream.Notification.Api/HermesStream.Notification.Tests/HermesStream.Notification.Tests.csproj", "HermesStream.Notification.Tests/"]
-RUN dotnet restore "./HermesStream.Notification.Api/./HermesStream.Notification.Api.csproj"
+
+# Copiar arquivos de projeto e restaurar dependências
+COPY HermesStream.Notification.Api/HermesStream.Notification.Api/HermesStream.Notification.Api.csproj HermesStream.Notification.Api/
+COPY HermesStream.Notification.Infrastructure/HermesStream.Notification.Infrastructure/HermesStream.Notification.Infrastructure.csproj HermesStream.Notification.Infrastructure/
+COPY HermesStream.Notification.Repository/HermesStream.Notification.Repository/HermesStream.Notification.Repository.csproj HermesStream.Notification.Repository/
+COPY HermesStream.Notification.Service/HermesStream.Notification.Service/HermesStream.Notification.Service.csproj HermesStream.Notification.Service/
+COPY HermesStream.Notification.Tests/HermesStream.Notification.Tests/HermesStream.Notification.Tests.csproj HermesStream.Notification.Tests/
+
+# Restaurar as dependências
+RUN dotnet restore HermesStream.Notification.Api/HermesStream.Notification.Api.csproj
+
+# Copiar o resto do código da aplicação
 COPY . .
-WORKDIR "/src/HermesStream.Notification.Api"
-RUN dotnet build "./HermesStream.Notification.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./HermesStream.Notification.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+# Build da aplicação
+RUN dotnet build HermesStream.Notification.Api/HermesStream.Notification.Api.csproj -c Release -o /app
 
-FROM base AS final
+# Estágio de publicação
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
 WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "HermesStream.Notification.Api.dll"]
+COPY --from=build /app .
+EXPOSE 80
+CMD ["dotnet", "HermesStream.Notification.Api.dll"]
