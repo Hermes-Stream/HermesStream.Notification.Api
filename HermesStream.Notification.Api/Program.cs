@@ -1,21 +1,24 @@
 using Autofac.Extensions.DependencyInjection;
 
-internal partial class Program
+namespace HermesStream.Notification.Api
 {
-    public static void Main(string[] args)
+    internal partial class Program
     {
-        //InfraModule.Configure();
-        var host = Host.CreateDefaultBuilder(args)
-            .UseServiceProviderFactory(new AutofacServiceProviderFactory())
-            .ConfigureWebHostDefaults(webHostBuilder =>
-            {
-                webHostBuilder
-              .UseContentRoot(Directory.GetCurrentDirectory())
-              .UseIISIntegration()
-              .UseStartup<Startup>();
-            })
-            .Build();
+        public static void Main(string[] args)
+        {
+            //InfraModule.Configure();
+            var host = Host.CreateDefaultBuilder(args)
+                .UseServiceProviderFactory(new AutofacServiceProviderFactory())
+                .ConfigureWebHostDefaults(webHostBuilder =>
+                {
+                    webHostBuilder
+                  .UseContentRoot(Directory.GetCurrentDirectory())
+                  .UseIISIntegration()
+                  .UseStartup<Startup>();
+                })
+                .Build();
 
-        host.Run();
+            host.Run();
+        }
     }
 }
