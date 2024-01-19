@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag juliaasoares/hermesstreamnotificationapi:latest
+      run: docker build . --file Dockerfile --tag juliaasoares/hermesstreamnotificationapi:1.0.0
