@@ -1,0 +1,31 @@
+name: Docker Container Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Log into Docker Hub
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Pull Docker Image
+      run: docker pull juliaasoares/hermesstreamnotificationapi:1.0.0
+
+    - name: Deploy to Azure App Service
+      run: |
+        az webapp config container set --name <HERMESSTREAM-API> --resource-group <HERMESSTREAM> --docker-custom-image-name juliaasoares/hermesstreamnotificationapi 
+      env:
+        DOCKER_IMAGE: juliaasoares/hermesstreamnotificationapi:1.0.0
+        NOME-APP-SERVICE: HERMESSTREAM-API
+        NOME-GRUPO-RECURSOS: HERMESSTREAM
+      env:
+        DOCKER_IMAGE: juliaasoares/hermesstreamnotificationapi:1.0.0
+
