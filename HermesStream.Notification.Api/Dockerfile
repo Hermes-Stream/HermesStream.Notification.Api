@@ -8,11 +8,11 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["HermesStream.Notification.Api/HermesStream.Notification.Api.csproj", "HermesStream.Notification.Api/"]
-COPY ["HermesStream.Notification.Infrastructure/HermesStream.Notification.Infrastructure.csproj", "HermesStream.Notification.Infrastructure/"]
-COPY ["HermesStream.Notification.Repository/HermesStream.Notification.Repository.csproj", "HermesStream.Notification.Repository/"]
-COPY ["HermesStream.Notification.Service/HermesStream.Notification.Service.csproj", "HermesStream.Notification.Service/"]
-COPY ["HermesStream.Notification.Tests/HermesStream.Notification.Tests.csproj", "HermesStream.Notification.Tests/"]
+COPY ["HermesStream.Notification.Api/HermesStream.Notification.Api/HermesStream.Notification.Api.csproj", "HermesStream.Notification.Api/"]
+COPY ["HermesStream.Notification.Api/HermesStream.Notification.Infrastructure/HermesStream.Notification.Infrastructure.csproj", "HermesStream.Notification.Infrastructure/"]
+COPY ["HermesStream.Notification.Api/HermesStream.Notification.Repository/HermesStream.Notification.Repository.csproj", "HermesStream.Notification.Repository/"]
+COPY ["HermesStream.Notification.Api/HermesStream.Notification.Service/HermesStream.Notification.Service.csproj", "HermesStream.Notification.Service/"]
+COPY ["HermesStream.Notification.Api/HermesStream.Notification.Tests/HermesStream.Notification.Tests.csproj", "HermesStream.Notification.Tests/"]
 RUN dotnet restore "./HermesStream.Notification.Api/./HermesStream.Notification.Api.csproj"
 COPY . .
 WORKDIR "/src/HermesStream.Notification.Api"
