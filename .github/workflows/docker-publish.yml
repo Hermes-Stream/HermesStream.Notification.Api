@@ -19,4 +19,4 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           docker build -t juliaasoares/hermesstreamnotificationapi:1.0.0 ./HermesStream.Notification.Api 
-          docker push "juliaasoares/hermesstreamnotificationapi:1.0.0" 
+          docker push juliaasoares/hermesstreamnotificationapi:1.0.0
