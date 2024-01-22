@@ -14,9 +14,9 @@
 # 3. Create a GitHub Personal access token with "repo" and "read:packages" permissions.
 #
 # 4. Create three app settings on your Azure Web app:
-#       DOCKER_REGISTRY_SERVER_URL: Set this to "https://ghcr.io"
-#       DOCKER_REGISTRY_SERVER_USERNAME: Set this to the GitHub username or organization that owns the repository
-#       DOCKER_REGISTRY_SERVER_PASSWORD: Set this to the value of your PAT token from the previous step
+#       DOCKER_REGISTRY_SERVER_URL: Set https://ghcr.io
+#       DOCKER_REGISTRY_SERVER_USERNAME: juliaasoares
+#       DOCKER_REGISTRY_SERVER_PASSWORD: 390853331
 #
 # 5. Change the value for the AZURE_WEBAPP_NAME.
 #
@@ -51,17 +51,17 @@ jobs:
         uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d # v3.0.0
         with:
           registry: ghcr.io
-          username: ${{ juliaasoares }}
-          password: ${{ dckr_pat_O0JOLAEak5YXwhd74diEiXbUGf4 }}
+          username: ${{ DOCKER_USERNAME }}
+          password: ${{ DOCKER_PASSWORD }}
 
       - name: Lowercase the repo name and username
-        run: echo "REPO=${Hermes-Stream,,}" >>${GITHUB_ENV}
+        run: echo "REPO=${HermesStream}" >>${GITHUB_ENV}
 
       - name: Build and push container image to registry
         uses: docker/build-push-action@0565240e2d4ab88bba5387d719585280857ece09 # v5.0.0
         with:
           push: true
-          tags: ghcr.io/${{ env.REPO }}:${{ github.sha }}
+          tags: ghcr.io/${{ env.REPO }}:latest
           file: ./Dockerfile
 
   deploy:
@@ -75,7 +75,7 @@ jobs:
 
     steps:
       - name: Lowercase the repo name and username
-        run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
+        run: echo "REPO=${HermesStream}" >>${GITHUB_ENV}
 
 
       - name: Deploy to Azure Web App
