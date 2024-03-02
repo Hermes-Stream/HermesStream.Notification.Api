@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\HermesStream.Notification.Acl\HermesStream.Notification.Acl.csproj" />
     <ProjectReference Include="..\HermesStream.Notification.Service\HermesStream.Notification.Service.csproj" />
     <ProjectReference Include="..\HermesStream.Notification.Repository\HermesStream.Notification.Repository.csproj" />
   </ItemGroup>

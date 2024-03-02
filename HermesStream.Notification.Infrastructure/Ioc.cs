@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using HermesStream.Notification.Acl.RabbitMQ;
 using HermesStream.Notification.Repository;
 using HermesStream.Notification.Repository.Mongo;
 using HermesStream.Notification.Service.Interfaces;
@@ -12,6 +13,7 @@ namespace HermesStream.Notification.Infrastructure
         {
             builder.RegisterType<MongoDbNotificationRepository>().As<INotificationRepository>();
             builder.RegisterType<NotificationService>().As<INotificationService>();
+            builder.RegisterType<SendToQueue>().As<ISendToQueue>();
         }
     }
 }
