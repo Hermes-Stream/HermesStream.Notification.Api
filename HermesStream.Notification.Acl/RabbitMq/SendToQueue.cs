@@ -6,7 +6,7 @@ namespace HermesStream.Notification.Acl.RabbitMq
     public class SendToQueue : ISendToQueue
     {
         private readonly string _host = "localhost";
-        private readonly int _port = 50756;
+        private readonly int _port = 56195;
         private readonly string _username = "admin";
         private readonly string _password = "123456";
         private readonly string _queueName = "send-notification";
