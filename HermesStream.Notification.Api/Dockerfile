@@ -10,6 +10,7 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["HermesStream.Notification.Api/HermesStream.Notification.Api.csproj", "HermesStream.Notification.Api/"]
 COPY ["HermesStream.Notification.Infrastructure/HermesStream.Notification.Infrastructure.csproj", "HermesStream.Notification.Infrastructure/"]
+COPY ["HermesStream.Notification.Acl/HermesStream.Notification.Acl.csproj", "HermesStream.Notification.Acl/"]
 COPY ["HermesStream.Notification.Service/HermesStream.Notification.Service.csproj", "HermesStream.Notification.Service/"]
 COPY ["HermesStream.Notification.Repository/HermesStream.Notification.Repository.csproj", "HermesStream.Notification.Repository/"]
 RUN dotnet restore "./HermesStream.Notification.Api/./HermesStream.Notification.Api.csproj"

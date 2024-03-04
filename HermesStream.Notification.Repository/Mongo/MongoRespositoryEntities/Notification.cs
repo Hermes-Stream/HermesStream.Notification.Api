@@ -1,9 +1,8 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
-using System.ComponentModel.DataAnnotations;
 
 namespace HermesStream.Notification.Repository.Mongo
 {
-    public class Notification 
+    public class Notification
     {
         public Notification() { }
 

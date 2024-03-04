@@ -1,8 +1,7 @@
-﻿using HermesStream.Notification.Repository;
+﻿using AutoMapper;
+using HermesStream.Notification.Repository;
 using HermesStream.Notification.Service.Interfaces;
 using Microsoft.Extensions.Logging;
-using AutoMapper;
-using System.Linq;
 
 namespace HermesStream.Notification.Service.Services
 {
@@ -32,7 +31,7 @@ namespace HermesStream.Notification.Service.Services
         public Entities.Notification GetOneTypeInformation()
         {
             var dto = _repo.GetNotificationInformation();
-            var mapped =_mapper.Map<Entities.Notification>(dto);
+            var mapped = _mapper.Map<Entities.Notification>(dto);
             return mapped;
         }
     }

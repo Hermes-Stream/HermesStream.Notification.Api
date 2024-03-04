@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using HermesStream.Notification.Acl.RabbitMQ;
+using HermesStream.Notification.Acl.RabbitMq;
 using HermesStream.Notification.Repository;
 using HermesStream.Notification.Repository.Mongo;
 using HermesStream.Notification.Service.Interfaces;

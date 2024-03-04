@@ -10,7 +10,7 @@ namespace HermesStream.Notification.Infrastructure
                         .ForMember(nDb => nDb.ClientId, nServ => nServ.MapFrom(n => n.ClientId))
                         .ForMember(nDb => nDb.NotificationId, nServ => nServ.MapFrom(n => n.NotificationId))
                         .ForMember(nDb => nDb.Message, nServ => nServ.MapFrom(n => n.Message))
-                        .ForMember(nDb => nDb.NotificationType, opt => opt.MapFrom(n => n.NotificationType)); 
+                        .ForMember(nDb => nDb.NotificationType, opt => opt.MapFrom(n => n.NotificationType));
         }
     }
 }

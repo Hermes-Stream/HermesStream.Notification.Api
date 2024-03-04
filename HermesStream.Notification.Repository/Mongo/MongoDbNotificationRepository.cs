@@ -10,7 +10,7 @@ namespace HermesStream.Notification.Repository.Mongo
         {
             var mongoClient = new MongoClient("mongodb+srv://juliasoares:390853331@hermesstream0.q9y1fri.mongodb.net/?retryWrites=true&w=majority");
             var database = mongoClient.GetDatabase("HermesStreamHML");
-            _notificationCollection = database.GetCollection<Notification>("Notification"); 
+            _notificationCollection = database.GetCollection<Notification>("Notification");
         }
 
         public void AddNotification(Notification notification)

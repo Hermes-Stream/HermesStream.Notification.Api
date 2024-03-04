@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HermesStream.Notification.T
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C3E1D8A6-C7AE-49BF-BFBA-E4EF042B7C12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HermesStream.Notification.Acl", "..\HermesStream.Notification.Acl\HermesStream.Notification.Acl.csproj", "{78BC3E54-8B91-446E-8382-D8A2B786E281}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HermesStream.Notification.Acl", "HermesStream.Notification.Acl\HermesStream.Notification.Acl.csproj", "{F3AA58DB-37C2-436B-AF74-C2FCF9377708}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{C3E1D8A6-C7AE-49BF-BFBA-E4EF042B7C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3E1D8A6-C7AE-49BF-BFBA-E4EF042B7C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3E1D8A6-C7AE-49BF-BFBA-E4EF042B7C12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{78BC3E54-8B91-446E-8382-D8A2B786E281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78BC3E54-8B91-446E-8382-D8A2B786E281}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78BC3E54-8B91-446E-8382-D8A2B786E281}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78BC3E54-8B91-446E-8382-D8A2B786E281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3AA58DB-37C2-436B-AF74-C2FCF9377708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3AA58DB-37C2-436B-AF74-C2FCF9377708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3AA58DB-37C2-436B-AF74-C2FCF9377708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3AA58DB-37C2-436B-AF74-C2FCF9377708}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
